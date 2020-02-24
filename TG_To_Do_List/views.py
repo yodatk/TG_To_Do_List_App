@@ -12,7 +12,7 @@ def home(request):
     :return: rendered page of the home page
     """
     todo_items = models.Todo.objects.all().order_by("-added_date")
-    return render(request, 'base.html', {
+    return render(request, 'main/list_editing_page.html', {
         "todo_items": todo_items
     })
 

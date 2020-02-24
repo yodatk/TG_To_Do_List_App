@@ -5,45 +5,31 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="UTF-8">
     <title>base</title>
 </head>
 <body>
+
 <nav class="navbar navbar-dark bg-dark">
     <!-- Navbar content -->
     <a class="navbar-brand" href="#">TG To-Do List</a>
+    <ul id="nav-mobile" class="right">
+
+        <a href="/"><i class="material-icons center" style="color: #EE6E73">eject</i></a>
+
+    </ul>
+
+
 </nav>
 <div class="container">
 
-    <div class="row mt-4">
-        <div class="col-auto">
-            <h2>Add Item</h2>
-            <form action="add_item/" method="post" class="form-inline">
-                {% csrf_token %}
-                <input type="text" name="content" class="form-control mb-2 mr-sm-2"
-                       placeholder="Type new To Do item...">
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
-            </form>
-        </div>
-    </div>
-
-
-    <div class="row mt-4">
-        <div class="col">
-            <ul class="list-group">
-                {% for todo_item in todo_items %}
-                <li class="list-group-item">{{ todo_item.text }}
-                    <form action="delete_item/{{ todo_item.id }}/" action="post">
-                        <div class="float-right">
-                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                        </div>
-                    </form>
-
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
     {% block content %}
 
     {% endblock content %}
