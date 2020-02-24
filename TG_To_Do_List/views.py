@@ -22,3 +22,8 @@ def add_item(request):
     content = request.POST["content"]
     models.Todo.objects.create(added_date=date, text=content)
     return HttpResponseRedirect("/")
+
+
+def delete_item(request, id_to_delete):
+    models.Todo.objects.get(id=id_to_delete).delete()
+    return HttpResponseRedirect("/")
