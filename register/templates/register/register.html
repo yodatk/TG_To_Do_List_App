@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Register {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <Button type="submit" class="btn btn-success">Register</Button>
+
+    </form>
+{% endblock %}
+
+
+{#{% block content %}#}
+{#    <form>#}
+{#        <div class="form-group">#}
+{#            <label for="email_register">Email address</label>#}
+{#            <input type="email" class="form-control" id="email_register" aria-describedby="emailHelp">#}
+{#            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>#}
+{#        </div>#}
+{#        <div class="form-group">#}
+{#            <label for="username_register">Username/label>#}
+{#            <input type="text" class="form-control" id="username_register" aria-describedby="usernameHelp">#}
+{#            <small id="emailHelp" class="form-text text-muted">The name you will be using in the site to login</small>#}
+{#        </div>#}
+{#        <div class="form-group">#}
+{#            <label for="password_register">Password</label>#}
+{#            <input type="password" class="form-control" id="password_register">#}
+{#        </div>#}
+{#        <button type="submit" class="btn btn-primary">Register</button>#}
+{#    </form>#}
+{#{% endblock content %}#}
