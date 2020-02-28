@@ -1,7 +1,7 @@
 # TG_To_Do_List_App
 Simple To Do List Website
 
-CREDIT TO THE AWSOME YOUTUBE TOTURIALS:
+CREDIT TO THESE AWSOME YOUTUBE TOTURIALS:
 
   https://www.youtube.com/watch?v=JT80XhYJdBw
   
