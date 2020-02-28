@@ -20,7 +20,10 @@
 <nav class="navbar navbar-dark bg-dark">
     <!-- Navbar content -->
     <a class="navbar-brand" href="#">TG To-Do List</a>
-    <a href="/"><i class="large material-icons right" style="color: white">exit_to_app</i></a>
+    {% block logout_logo %}
+
+    {% endblock logout_logo %}
+{#    <a href="/"><i class="large material-icons right" style="color: white">exit_to_app</i></a>#}
 </nav>
 <div class="container">
 

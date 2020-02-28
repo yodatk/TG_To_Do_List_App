@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
+{% block logout_logo %}
+    <a href="/logout/"><i class="large material-icons right" style="color: white">exit_to_app</i></a>
+{% endblock logout_logo %}
+
+
 
 {% block content %}
 
     <div class="row mt-4">
         <div class="col-auto">
-            <h2>Add Item</h2>
+            <h2>Your List</h2>
             <form action="add_item/" method="post" class="form-inline">
                 {% csrf_token %}
                 <input type="text" name="content" class="form-control mb-2 mr-sm-2"
@@ -22,7 +27,8 @@
                     <li class="list-group-item">{{ todo_item.text }}
                         <form action="delete_item/{{ todo_item.id }}/" action="post">
                             <div class="float-right">
-                                <button type="submit" class="btn btn-sm btn-danger"><i class="material-icons center">delete</i></button>
+                                <button type="submit" class="btn btn-sm btn-danger"><i class="material-icons center">delete</i>
+                                </button>
                             </div>
                         </form>
 
